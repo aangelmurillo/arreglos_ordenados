@@ -4,9 +4,9 @@ import java.util.regex.Pattern;
 public class Arreglo {
     static Scanner in = new Scanner(System.in);
     int max = 20;
-    Character[] abecedario = new Character[max - 1];
-    String regex = "[a-zA-Z]+";
-    Pattern p = Pattern.compile(regex);
+    Character[] abecedario = new Character[max];
+    //String regex = "[a-zA-Z]+";
+    //Pattern p = Pattern.compile(regex);
     int n = -1;
 
     public void insertar(char letra) {
@@ -29,6 +29,7 @@ public class Arreglo {
 
         for (int i = n; i > posicion; i--) { 
             abecedario[i] = abecedario[i - 1];
+            System.out.println(i);
         }
 
         abecedario[posicion] = letra;
