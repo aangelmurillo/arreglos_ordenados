@@ -29,7 +29,6 @@ public class Arreglo {
 
         for (int i = n; i > posicion; i--) { 
             abecedario[i] = abecedario[i - 1];
-            System.out.println(i);
         }
 
         abecedario[posicion] = letra;
@@ -47,7 +46,7 @@ public class Arreglo {
         if (n < 0) {
             System.out.println("Arreglo vacío");
         } else {
-            for (int i = 0; i < abecedario.length; i++) {
+            for (int i = 0; i <= n; i++) {
                 System.out.print(abecedario[i] + " ");
             }
             System.out.println();
@@ -61,15 +60,16 @@ public class Arreglo {
             System.out.println("El arreglo esta vacio");
             return posicionEncontrada;
         }
+
         for (int i = 0; i <= n; i++) {
             if (bus.equals(abecedario[i].toString())) {
                 System.out.println("La encontre en la localidad " + i + " y es: " + abecedario[i]);
                 posicionEncontrada = i;
                 break;
+            } else if(abecedario[i].toString().charAt(0) > bus.charAt(0)) {
+                System.out.println("No encontre la letra " + bus + " en el arreglo");
+                return posicionEncontrada;
             }
-        }
-        if (posicionEncontrada <= -1) {
-            return posicionEncontrada;
         }
 
         return posicionEncontrada;
