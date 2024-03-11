@@ -5,8 +5,6 @@ public class Arreglo {
     static Scanner in = new Scanner(System.in);
     int max = 20;
     Character[] abecedario = new Character[max];
-    //String regex = "[a-zA-Z]+";
-    //Pattern p = Pattern.compile(regex);
     int n = -1;
 
     public void insertar(char letra) {
@@ -55,23 +53,23 @@ public class Arreglo {
 
     public int buscarElemento(String bus) {
         int posicionEncontrada = -1;
-
+    
         if (n < 0) {
             System.out.println("El arreglo esta vacio");
             return posicionEncontrada;
         }
-
+    
         for (int i = 0; i <= n; i++) {
             if (bus.equals(abecedario[i].toString())) {
                 System.out.println("La encontre en la localidad " + i + " y es: " + abecedario[i]);
                 posicionEncontrada = i;
                 break;
-            } else if(abecedario[i].toString().charAt(0) > bus.charAt(0)) {
+            }  if (i == n) {
                 System.out.println("No encontre la letra " + bus + " en el arreglo");
                 return posicionEncontrada;
             }
         }
-
+    
         return posicionEncontrada;
     }
 
@@ -79,7 +77,7 @@ public class Arreglo {
         int posicion = buscarElemento(b);
 
         if (posicion >= 0) {
-            for (int i = posicion; i < n - 1; i++) {
+            for (int i = posicion; i < n; i++) {
                 abecedario[i] = abecedario[i + 1];
             }
             n--;
